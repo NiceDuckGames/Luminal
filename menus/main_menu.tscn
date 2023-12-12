@@ -1,0 +1,402 @@
+[gd_scene load_steps=26 format=3 uid="uid://cx4nmp1823qts"]
+
+[ext_resource type="Script" path="res://menus/main_menu.gd" id="1_fk5q6"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="2_vlnb6"]
+[ext_resource type="Script" path="res://menus/title.gd" id="3_hdfy8"]
+[ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="4_roc3l"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="5_xjsrx"]
+[ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="6_1o4fd"]
+[ext_resource type="PackedScene" uid="uid://cuu2h435ku8em" path="res://cursor_shadow.tscn" id="7_2t1cw"]
+
+[sub_resource type="Animation" id="Animation_kpuio"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuContainer/Title/PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuContainer/HBoxContainer/Play:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" "]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuContainer/HBoxContainer/Settings:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" "]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MenuContainer/HBoxContainer/Exit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" "]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MenuContainer/Title:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gpepc"]
+resource_name = "light off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuContainer/Title/PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuContainer/HBoxContainer/Play:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" Play", " "]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuContainer/HBoxContainer/Settings:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" Settings", " "]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuContainer/HBoxContainer/Exit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" Exit", " "]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_c14eb"]
+resource_name = "light_on"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuContainer/Title/PointLight2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuContainer/HBoxContainer/Play:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" ", " Play"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuContainer/HBoxContainer/Settings:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" ", " Settings"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MenuContainer/HBoxContainer/Exit:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [" ", " Exit"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MenuContainer/Title:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show_title"
+}, {
+"args": [],
+"method": &"set_startup_to_false"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_njqul"]
+_data = {
+"RESET": SubResource("Animation_kpuio"),
+"light off": SubResource("Animation_gpepc"),
+"light_on": SubResource("Animation_c14eb")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4m86l"]
+polygon = PackedVector2Array(407, 53, 407, 145, 470, 145, 470, 140, 421, 140, 421, 53)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2s5ff"]
+polygon = PackedVector2Array(408, 77, 408, 132, 411, 138, 416, 142, 421, 144, 427, 145, 471, 145, 471, 77, 456, 77, 456, 138, 452, 140, 432, 140, 425, 136, 422, 129, 422, 77)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xkpkw"]
+polygon = PackedVector2Array(485, 77, 567, 77, 575, 79, 581, 83, 585, 87, 586, 91, 586, 145, 572, 145, 572, 92, 569, 86, 565, 83, 561, 82, 546, 82, 543, 85, 543, 146, 528, 146, 528, 85, 525, 82, 503, 82, 499, 86, 499, 145, 485, 145)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b8eeb"]
+polygon = PackedVector2Array(591, 63, 591, 53, 606, 53, 606, 63)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_us56t"]
+polygon = PackedVector2Array(591, 77, 605, 77, 605, 128, 607, 135, 612, 139, 619, 140, 625, 140, 625, 145, 610, 145, 602, 143, 596, 139, 591, 132)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ftpfx"]
+polygon = PackedVector2Array(601, 77, 601, 145, 615, 145, 615, 86, 619, 82, 639, 82, 645, 85, 649, 92, 649, 145, 664, 145, 664, 93, 662, 87, 657, 82, 650, 78, 643, 77)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mdr3g"]
+polygon = PackedVector2Array(725, 82, 725, 77, 761, 77, 769, 79, 773, 82, 776, 85, 778, 89, 779, 93, 779, 145, 733, 145, 727, 143, 723, 141, 720, 138, 718, 135, 716, 130, 716, 118, 717, 112, 719, 109, 722, 106, 727, 103, 735, 101, 764, 101, 764, 92, 762, 87, 760, 85, 757, 83, 753, 82)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o5ddk"]
+polygon = PackedVector2Array(793, 53, 808, 53, 808, 131, 810, 136, 814, 139, 819, 140, 827, 140, 827, 145, 810, 145, 802, 142, 798, 139, 795, 135, 793, 130)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xr8tt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcj8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dgxk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8rh0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3pfug"]
+
+[sub_resource type="Theme" id="Theme_vo2f2"]
+Button/colors/font_color = Color(0.745098, 0.745098, 0.745098, 1)
+Button/colors/font_focus_color = Color(0.745098, 0.745098, 0.745098, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0.87451, 0.87451, 0.87451, 1)
+Button/colors/font_outline_color = Color(0.14902, 0.14902, 0.172549, 1)
+Button/colors/font_pressed_color = Color(0.403922, 0.403922, 0.403922, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("6_1o4fd")
+Button/styles/disabled = SubResource("StyleBoxEmpty_xr8tt")
+Button/styles/focus = SubResource("StyleBoxEmpty_xcj8f")
+Button/styles/hover = SubResource("StyleBoxEmpty_dgxk6")
+Button/styles/normal = SubResource("StyleBoxEmpty_y8rh0")
+Button/styles/pressed = SubResource("StyleBoxEmpty_3pfug")
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fk5q6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.270588, 0.270588, 0.305882, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "light_on"
+libraries = {
+"": SubResource("AnimationLibrary_njqul")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(752, 145)
+stream = ExtResource("2_vlnb6")
+volume_db = 9.8
+pitch_scale = 0.76
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_hdfy8")
+light_off_color = Color(0.235294, 0.235294, 0.266667, 1)
+light_on_color = Color(0.972549, 0.972549, 0.972549, 1)
+
+[node name="Title" type="Label" parent="MenuContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.972549, 0.972549, 1)
+theme_override_fonts/font = ExtResource("4_roc3l")
+theme_override_font_sizes/font_size = 116
+text = "Luminal"
+horizontal_alignment = 1
+
+[node name="L" type="LightOccluder2D" parent="MenuContainer/Title"]
+position = Vector2(-86, 0)
+occluder = SubResource("OccluderPolygon2D_4m86l")
+
+[node name="U" type="LightOccluder2D" parent="MenuContainer/Title"]
+position = Vector2(-10, 0)
+occluder = SubResource("OccluderPolygon2D_2s5ff")
+
+[node name="M" type="LightOccluder2D" parent="MenuContainer/Title"]
+position = Vector2(-10, 0)
+occluder = SubResource("OccluderPolygon2D_xkpkw")
+
+[node name="dot" type="LightOccluder2D" parent="MenuContainer/Title"]
+occluder = SubResource("OccluderPolygon2D_b8eeb")
+
+[node name="I" type="LightOccluder2D" parent="MenuContainer/Title"]
+occluder = SubResource("OccluderPolygon2D_us56t")
+
+[node name="N" type="LightOccluder2D" parent="MenuContainer/Title"]
+position = Vector2(38, 0)
+occluder = SubResource("OccluderPolygon2D_ftpfx")
+
+[node name="A" type="LightOccluder2D" parent="MenuContainer/Title"]
+occluder = SubResource("OccluderPolygon2D_mdr3g")
+
+[node name="smallL" type="LightOccluder2D" parent="MenuContainer/Title"]
+occluder = SubResource("OccluderPolygon2D_o5ddk")
+
+[node name="PointLight2D" type="PointLight2D" parent="MenuContainer/Title"]
+position = Vector2(809, -116)
+rotation = -0.785398
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("5_xjsrx")
+texture_scale = 3.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme = SubResource("Theme_vo2f2")
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="Play" type="Button" parent="MenuContainer/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = " "
+
+[node name="Settings" type="Button" parent="MenuContainer/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = " "
+
+[node name="Exit" type="Button" parent="MenuContainer/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = " "
+
+[node name="CursorShadow" parent="." instance=ExtResource("7_2t1cw")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="visibility_changed" from="MenuContainer/Title/PointLight2D" to="MenuContainer" method="_on_point_light_2d_visibility_changed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

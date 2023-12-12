@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuu2h435ku8em"]
+
+[ext_resource type="Script" path="res://cursor_shadow.gd" id="1_m0rug"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p34uk"]
+polygon = PackedVector2Array(0, 0, 9, 7, 6, 13, 0, 11)
+
+[node name="CursorShadow" type="LightOccluder2D"]
+position = Vector2(-1, -1)
+occluder = SubResource("OccluderPolygon2D_p34uk")
+script = ExtResource("1_m0rug")

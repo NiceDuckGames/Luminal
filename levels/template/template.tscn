@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0aaun76nap64"]
+
+[ext_resource type="Script" path="res://levels/template/level.gd" id="1_w1r3d"]
+[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_4gkol"]
+[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_mqiih"]
+[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_kxrq5"]
+[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="9_fuuk1"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="10_q6rld"]
+[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_ut4ou"]
+
+[sub_resource type="Animation" id="Animation_vhlv5"]
+resource_name = "slide_transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Click:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_lgrmi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Click:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
+_data = {
+"RESET": SubResource("Animation_lgrmi"),
+"slide_transition": SubResource("Animation_vhlv5")
+}
+
+[sub_resource type="Gradient" id="Gradient_temuh"]
+colors = PackedColorArray(0.172549, 0.172549, 0.172549, 1, 0.172549, 0.172549, 0.172549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rokn6"]
+gradient = SubResource("Gradient_temuh")
+width = 256
+height = 256
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_w1r3d")
+level_name = "1"
+
+[node name="Player" parent="." instance=ExtResource("2_4gkol")]
+position = Vector2(326, 339)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../UI")
+libraries = {
+"": SubResource("AnimationLibrary_uuwds")
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 2
+layer = 2
+script = ExtResource("3_mqiih")
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+offset_left = 481.0
+offset_top = 6.0
+offset_right = 586.0
+offset_bottom = 32.0
+text = "GAME OVER"
+
+[node name="Control" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Control"]
+layout_mode = 0
+offset_right = 2354.0
+offset_bottom = 1478.0
+color = Color(0.270588, 0.270588, 0.305882, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("4_kxrq5")
+
+[node name="Switches" type="Node2D" parent="."]
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+
+[node name="Boundary" type="Node2D" parent="LevelGeometry"]
+
+[node name="Walls" type="Node2D" parent="LevelGeometry"]
+
+[node name="NoGrows" type="Node2D" parent="."]
+
+[node name="LevelLights" type="Node2D" parent="."]
+
+[node name="Finish" parent="." instance=ExtResource("9_fuuk1")]
+position = Vector2(1904, 296)
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+self_modulate = Color(1, 1, 1, 0.494118)
+offset_left = -1415.0
+offset_top = -93.0
+offset_right = 2261.0
+offset_bottom = 2636.0
+texture = SubResource("GradientTexture2D_rokn6")
+
+[node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ut4ou")
+volume_db = -35.052
+pitch_scale = 0.83
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_q6rld")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dax2hei54riu0"]
+
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="1_5mfpq"]
+[ext_resource type="Script" path="res://level_components/scripts/switch_light.gd" id="2_52ofh"]
+
+[node name="SwitchLight" type="PointLight2D"]
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
+texture = ExtResource("1_5mfpq")
+script = ExtResource("2_52ofh")
+
+[node name="SpotlightBounds" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(114.707, 228.863)
+collision_mask = 0
+
+[node name="SpotlightBounds2" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(114.707, 228.863)
+collision_mask = 0
