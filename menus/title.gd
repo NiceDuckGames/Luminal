@@ -5,6 +5,7 @@ extends VBoxContainer
 
 @onready var scene_light: Light2D = $Title/PointLight2D
 @onready var menu_container: HBoxContainer = $HBoxContainer
+@onready var credits_button: Button = $"../Credits"
 
 
 func _ready() -> void:
@@ -25,3 +26,14 @@ func _on_point_light_2d_visibility_changed() -> void:
 	
 	menu_container.visible = true
 
+
+func _input(event: InputEvent) -> void:
+	
+	if event is InputEventMouseMotion:
+		
+		if credits_button.has_focus():
+			self.grab_focus()
+		
+		for button in menu_container.get_children():
+			if button.has_focus():
+				self.grab_focus()

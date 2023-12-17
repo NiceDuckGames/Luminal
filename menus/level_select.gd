@@ -26,7 +26,7 @@ func _ready() -> void:
 				var item = level_item_res.instantiate()
 				
 				item.set_level_name(file_name.get_basename().get_basename())
-				item.level_file_path = "res://levels/" + file_name.get_basename() + ".tscn"
+				item.level_file_path = "res://levels/" + file_name.get_basename()
 				
 				if LevelTracker.is_level_completed(file_name.get_basename().get_basename()):
 					item.set_completed()
@@ -87,7 +87,7 @@ func hide_title():
 	
 	$Control/Title.visible = false
 	$ColorRect.color = Color.from_string("45454e", Color.BLACK)
-	level_items[0].grab_focus()
+	$MarginContainer/PanelContainer/VBoxContainer/Control/BackButton.grab_focus()
 	
 
 

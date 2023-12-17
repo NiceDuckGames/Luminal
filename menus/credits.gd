@@ -20,3 +20,14 @@ func _on_jam_info_button_pressed() -> void:
 	$JamInfo.visible = !$JamInfo.visible
 	$VBoxContainer.visible = !$VBoxContainer.visible
 	$AudioStreamPlayer.play(0.075)
+
+
+func _input(event: InputEvent) -> void:
+	
+	if event is InputEventMouseMotion:
+		
+		if $Control/BackButton.has_focus():
+			self.grab_focus()
+		
+		if $JamInfoButton.has_focus():
+			self.grab_focus()

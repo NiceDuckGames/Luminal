@@ -368,6 +368,13 @@ bus = &"Effects"
 
 [node name="MenuContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Credits")
+focus_neighbor_top = NodePath("HBoxContainer/Play")
+focus_neighbor_right = NodePath("HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../Credits")
+focus_next = NodePath("HBoxContainer/Play")
+focus_previous = NodePath("../Credits")
+focus_mode = 2
 alignment = 1
 script = ExtResource("3_hdfy8")
 light_off_color = Color(0.235294, 0.235294, 0.266667, 1)

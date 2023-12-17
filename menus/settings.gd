@@ -63,6 +63,10 @@ func _on_exit_level_button_down() -> void:
 
 func _input(event: InputEvent) -> void:
 	
+	if event is InputEventMouseMotion:
+		
+		self.grab_focus()
+	
 	if event is InputEventKey && !event.is_pressed() && !event.is_action("ui_accept"):
 		
 		match active_input_selection:
@@ -163,3 +167,4 @@ func return_to_main_screen():
 func _on_back_button_pressed() -> void:
 	
 	$AnimationPlayer.play("go_back")
+

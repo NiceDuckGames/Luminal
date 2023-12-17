@@ -186,9 +186,8 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 125
-theme_override_constants/margin_top = -25
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2

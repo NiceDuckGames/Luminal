@@ -262,7 +262,7 @@ rotation = 1.5708
 size = Vector2(100, 1700)
 
 [node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
-position = Vector2(752, 1160)
+position = Vector2(750, 1160)
 rotation = 1.5708
 size = Vector2(100, 1500)
 

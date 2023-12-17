@@ -247,11 +247,11 @@ position = Vector2(563, 875)
 [node name="Boundary" type="Node2D" parent="LevelGeometry"]
 
 [node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(51, 532)
+position = Vector2(50, 532)
 size = Vector2(100, 1000)
 
 [node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(1451, 532)
+position = Vector2(1450, 532)
 size = Vector2(100, 1000)
 
 [node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
@@ -260,7 +260,7 @@ rotation = 1.5708
 size = Vector2(100, 1500)
 
 [node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(751, 982)
+position = Vector2(750, 982)
 rotation = 1.5708
 size = Vector2(100, 1500)
 
