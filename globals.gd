@@ -6,7 +6,6 @@ var previous_scene: String = ""
 var current_scene: String = ""
 
 
-
 func set_current_scene(scene_name: String):
 	
 	previous_scene = current_scene

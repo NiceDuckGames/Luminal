@@ -1,0 +1,639 @@
+[gd_scene load_steps=32 format=3 uid="uid://ccm2h1qigphx4"]
+
+[ext_resource type="Script" path="res://menus/settings.gd" id="1_ythml"]
+[ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="2_a8j2a"]
+[ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="3_k3fih"]
+[ext_resource type="FontFile" uid="uid://bf3lgo13uua43" path="res://assets/fonts/Righteous-Regular.ttf" id="4_il2ys"]
+[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="4_yomtr"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="5_cfirw"]
+[ext_resource type="Script" path="res://menus/back_button.gd" id="5_ttmvr"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="6_nx2tf"]
+[ext_resource type="Script" path="res://menus/cursor_shadow.gd" id="9_rgmmb"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7m5od"]
+polygon = PackedVector2Array(-0.5, 35, 91.5, 34, 91.5, 10, -0.5, 10, -0.5, 35)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d7nvk"]
+polygon = PackedVector2Array(-3, 19, 48, 19, 47, 8, -4, 5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_voton"]
+polygon = PackedVector2Array(-3, 19, 53, 19, 53, 8, -9, 5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eas51"]
+polygon = PackedVector2Array(-3, 23, 53, 20, 53, 8, -2, 6)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3rvpl"]
+polygon = PackedVector2Array(-3, 19, 53, 19, 53, 8, -9, 5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_arkd1"]
+cull_mode = 2
+polygon = PackedVector2Array(-0.5, 35, 88, 34, 87, 11, -0.5, 10, -0.5, 35)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0pf4e"]
+polygon = PackedVector2Array(-3, 19, 19, 19, 19, 7, -3, 4)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yafaf"]
+polygon = PackedVector2Array(-3, 19, 43, 19, 43, 9, -3, 4)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ykmvy"]
+polygon = PackedVector2Array(-3, 20, 32, 20, 32, 6, -3, 4)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_boxfm"]
+polygon = PackedVector2Array(-3, 20, 40, 19, 40, 5, -3, 4)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r26of"]
+polygon = PackedVector2Array(-3, 20, 28, 19, 27, 6, -3, 4)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_epqbq"]
+polygon = PackedVector2Array(-3, 20, 41, 20, 41, 7, -3, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrpm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oroia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3g8q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h353n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eosjb"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bp8ni"]
+
+[sub_resource type="Animation" id="Animation_wqk2i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BackButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CursorShadow:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control2/Title:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ksk4e"]
+resource_name = "go_back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BackButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CursorShadow:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"return_to_main_screen"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_kal1n"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BackButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CursorShadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control2/Title:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_667pa"]
+_data = {
+"RESET": SubResource("Animation_wqk2i"),
+"go_back": SubResource("Animation_ksk4e"),
+"start": SubResource("Animation_kal1n")
+}
+
+[node name="Settings" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 300
+script = ExtResource("1_ythml")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_a8j2a")
+theme_override_font_sizes/font_size = 28
+text = "Audio:"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="VBoxContainer/MarginContainer5"]
+occluder = SubResource("OccluderPolygon2D_7m5od")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Music Volume: "
+
+[node name="MusicVolume" type="HSlider" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../../../Control/BackButton")
+focus_neighbor_top = NodePath("../../../../Control/BackButton")
+focus_neighbor_right = NodePath("../../../MarginContainer2/HBoxContainer/EffectVolume")
+focus_neighbor_bottom = NodePath("../../../MarginContainer2/HBoxContainer/EffectVolume")
+focus_next = NodePath("../../../MarginContainer2/HBoxContainer/EffectVolume")
+focus_previous = NodePath("../../../../Control/BackButton")
+min_value = -80.0
+max_value = 20.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="VBoxContainer/MarginContainer"]
+position = Vector2(0.5, 1)
+occluder = SubResource("OccluderPolygon2D_d7nvk")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="VBoxContainer/MarginContainer"]
+position = Vector2(62.5, 1)
+occluder = SubResource("OccluderPolygon2D_voton")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Effects Volume: "
+
+[node name="EffectVolume" type="HSlider" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../../MarginContainer/HBoxContainer/MusicVolume")
+focus_neighbor_top = NodePath("../../../MarginContainer/HBoxContainer/MusicVolume")
+focus_neighbor_right = NodePath("../../../MarginContainer4/VBoxContainer/HBoxContainer/Up")
+focus_neighbor_bottom = NodePath("../../../MarginContainer4/VBoxContainer/HBoxContainer/Up")
+focus_next = NodePath("../../../MarginContainer4/VBoxContainer/HBoxContainer/Up")
+focus_previous = NodePath("../../../MarginContainer/HBoxContainer/MusicVolume")
+min_value = -80.0
+max_value = 20.0
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="VBoxContainer/MarginContainer2"]
+position = Vector2(1.5, 1)
+occluder = SubResource("OccluderPolygon2D_eas51")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="VBoxContainer/MarginContainer2"]
+position = Vector2(69.5, 2)
+occluder = SubResource("OccluderPolygon2D_3rvpl")
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_a8j2a")
+theme_override_font_sizes/font_size = 28
+text = "Input:"
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="VBoxContainer/MarginContainer3"]
+position = Vector2(-3.5, 3)
+occluder = SubResource("OccluderPolygon2D_arkd1")
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Up:                     "
+
+[node name="Up" type="Button" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../../../MarginContainer2/HBoxContainer/EffectVolume")
+focus_neighbor_top = NodePath("../../../../MarginContainer2/HBoxContainer/EffectVolume")
+focus_neighbor_right = NodePath("../../HBoxContainer2/Down")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/Down")
+focus_next = NodePath("../../HBoxContainer2/Down")
+focus_previous = NodePath("../../../../MarginContainer2/HBoxContainer/EffectVolume")
+theme_override_fonts/font = ExtResource("3_k3fih")
+toggle_mode = true
+action_mode = 0
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+position = Vector2(3.5, 3)
+occluder = SubResource("OccluderPolygon2D_0pf4e")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Down:                "
+
+[node name="Down" type="Button" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../HBoxContainer/Up")
+focus_neighbor_top = NodePath("../../HBoxContainer/Up")
+focus_neighbor_right = NodePath("../../HBoxContainer3/Left")
+focus_neighbor_bottom = NodePath("../../HBoxContainer3/Left")
+focus_next = NodePath("../../HBoxContainer3/Left")
+focus_previous = NodePath("../../HBoxContainer/Up")
+theme_override_fonts/font = ExtResource("3_k3fih")
+toggle_mode = true
+action_mode = 0
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+position = Vector2(2.5, 2)
+occluder = SubResource("OccluderPolygon2D_yafaf")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Left:                   "
+
+[node name="Left" type="Button" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../HBoxContainer2/Down")
+focus_neighbor_top = NodePath("../../HBoxContainer2/Down")
+focus_neighbor_right = NodePath("../../HBoxContainer4/Right")
+focus_neighbor_bottom = NodePath("../../HBoxContainer4/Right")
+focus_next = NodePath("../../HBoxContainer4/Right")
+focus_previous = NodePath("../../HBoxContainer2/Down")
+theme_override_fonts/font = ExtResource("3_k3fih")
+toggle_mode = true
+action_mode = 0
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+position = Vector2(2.5, 2)
+occluder = SubResource("OccluderPolygon2D_ykmvy")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Right:                 "
+
+[node name="Right" type="Button" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../HBoxContainer3/Left")
+focus_neighbor_top = NodePath("../../HBoxContainer3/Left")
+focus_neighbor_right = NodePath("../../HBoxContainer5/ExitLevel")
+focus_neighbor_bottom = NodePath("../../HBoxContainer5/ExitLevel")
+focus_next = NodePath("../../HBoxContainer5/ExitLevel")
+focus_previous = NodePath("../../HBoxContainer3/Left")
+theme_override_fonts/font = ExtResource("3_k3fih")
+toggle_mode = true
+action_mode = 0
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer4"]
+position = Vector2(2.5, 3)
+occluder = SubResource("OccluderPolygon2D_boxfm")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/MarginContainer4/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k3fih")
+text = "Exit Level:         "
+
+[node name="ExitLevel" type="Button" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_left = NodePath("../../HBoxContainer4/Right")
+focus_neighbor_top = NodePath("../../HBoxContainer4/Right")
+focus_neighbor_right = NodePath("../../../../../Control/BackButton")
+focus_neighbor_bottom = NodePath("../../../../../Control/BackButton")
+focus_next = NodePath("../../../../../Control/BackButton")
+focus_previous = NodePath("../../HBoxContainer4/Right")
+theme_override_fonts/font = ExtResource("3_k3fih")
+toggle_mode = true
+action_mode = 0
+
+[node name="LightOccluder2D7" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5"]
+position = Vector2(2.5, 2)
+occluder = SubResource("OccluderPolygon2D_r26of")
+
+[node name="LightOccluder2D8" type="LightOccluder2D" parent="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5"]
+position = Vector2(41.5, 1)
+occluder = SubResource("OccluderPolygon2D_epqbq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 1
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -242.5
+offset_top = 438.0
+offset_right = -148.5
+offset_bottom = 615.0
+size_flags_horizontal = 0
+focus_neighbor_left = NodePath("../../VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5/ExitLevel")
+focus_neighbor_top = NodePath("../../VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5/ExitLevel")
+focus_neighbor_right = NodePath("../../VBoxContainer/MarginContainer/HBoxContainer/MusicVolume")
+focus_neighbor_bottom = NodePath("../../VBoxContainer/MarginContainer/HBoxContainer/MusicVolume")
+focus_next = NodePath("../../VBoxContainer/MarginContainer/HBoxContainer/MusicVolume")
+focus_previous = NodePath("../../VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5/ExitLevel")
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.12549, 0.12549, 0.12549, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_focus_color = Color(0.12549, 0.12549, 0.12549, 1)
+theme_override_fonts/font = ExtResource("4_il2ys")
+theme_override_font_sizes/font_size = 136
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jrpm5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oroia")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3g8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h353n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eosjb")
+action_mode = 0
+text = "<"
+script = ExtResource("5_ttmvr")
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/BackButton"]
+visible = false
+position = Vector2(60, 86)
+texture = ExtResource("6_nx2tf")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = -6
+layout_mode = 0
+offset_left = -304.5
+offset_top = -38.0
+offset_right = 966.5
+offset_bottom = 701.0
+mouse_filter = 2
+color = Color(0.270588, 0.270588, 0.305882, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yomtr")
+volume_db = -23.0
+pitch_scale = 0.83
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cfirw")
+pitch_scale = 0.76
+bus = &"Effects"
+
+[node name="CursorShadow" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(555.5, 303)
+occluder = SubResource("OccluderPolygon2D_bp8ni")
+script = ExtResource("9_rgmmb")
+
+[node name="PointLight2D" type="PointLight2D" parent="CursorShadow"]
+color = Color(0.772549, 0.772549, 0.772549, 1)
+energy = 0.55
+shadow_enabled = true
+texture = ExtResource("6_nx2tf")
+texture_scale = 0.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+libraries = {
+"": SubResource("AnimationLibrary_667pa")
+}
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Control2"]
+layout_mode = 2
+offset_left = -300.0
+offset_top = 212.0
+offset_right = 852.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(0.235294, 0.235294, 0.266667, 1)
+theme_override_fonts/font = ExtResource("2_a8j2a")
+theme_override_font_sizes/font_size = 116
+text = "Luminal"
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/HBoxContainer/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="drag_ended" from="VBoxContainer/MarginContainer2/HBoxContainer/EffectVolume" to="." method="_on_effect_volume_drag_ended"]
+[connection signal="value_changed" from="VBoxContainer/MarginContainer2/HBoxContainer/EffectVolume" to="." method="_on_effect_volume_value_changed"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer/Up" to="." method="_on_up_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2/Down" to="." method="_on_down_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3/Left" to="." method="_on_left_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer4/Right" to="." method="_on_right_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer5/ExitLevel" to="." method="_on_exit_level_button_down"]
+[connection signal="button_down" from="Control/BackButton" to="Control/BackButton" method="_on_button_down"]
+[connection signal="focus_entered" from="Control/BackButton" to="Control/BackButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Control/BackButton" to="Control/BackButton" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Control/BackButton" to="Control/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BackButton" to="Control/BackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/BackButton" to="." method="_on_back_button_pressed"]

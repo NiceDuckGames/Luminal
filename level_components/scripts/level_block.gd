@@ -18,7 +18,7 @@ func set_size(value: Vector2):
 	$ColorRect.size = value
 	$ColorRect.anchors_preset = Control.PRESET_CENTER
 	
-	var margined_value: Vector2 = Vector2(clamp(value.x - 10, 0, 99999999), clamp(value.y - 10, 0, 9999999))
+	var margined_value: Vector2 = Vector2(clamp(value.x - occluder_margin, 0, 99999999), clamp(value.y - occluder_margin, 0, 9999999))
 	
 	var tl: Vector2 = Vector2(-(margined_value.x / 2.0), -(margined_value.y / 2.0))
 	var tr: Vector2 = Vector2((margined_value.x / 2.0), -(margined_value.y / 2.0))
@@ -29,6 +29,17 @@ func set_size(value: Vector2):
 	
 	$LightOccluder2D.occluder = OccluderPolygon2D.new()
 	$LightOccluder2D.occluder.set_polygon(rect_points)
+
+
+func set_dark(is_dark: bool):
+	
+	if is_dark:
+		
+		$ColorRect.color = Color.BLACK
+	
+	else:
+		
+		$ColorRect.color = Color.WHITE
 
 
 func _ready() -> void:

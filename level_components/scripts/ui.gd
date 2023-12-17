@@ -8,6 +8,7 @@ func game_over():
 
 
 func game_finished():
-	game_end_label.text = "You Won"
-	game_end_label.show()
+	pass
+#	game_end_label.text = "You Won"
+#	game_end_label.show()
 

@@ -6,10 +6,12 @@ var player: CharacterBody2D
 
 @export var compare_vector: Vector2 = Vector2.UP
 
+@export var turn_on: bool = false
 @export var switch: Area2D
 
 var l_ray: RayCast2D = RayCast2D.new()
 var r_ray: RayCast2D = RayCast2D.new()
+var c_ray: RayCast2D = RayCast2D.new()
 
 @onready var spotlight_bound_l: RayCast2D = $SpotlightBounds
 @onready var spotlight_bound_r: RayCast2D = $SpotlightBounds2
@@ -23,17 +25,29 @@ var r_ray: RayCast2D = RayCast2D.new()
 @export var spotlight_bound_r_angle: float = 90.0:
 	set = set_spotlight_bound_r_angle
 
+@export var is_timed: bool = false
+@export var timer_length: float = 1.0
+
 
 func _ready() -> void:
 	
+	$SwitchOnTimer.wait_time = timer_length
+	
 	l_ray.name = "L"
 	l_ray.top_level = true
+	l_ray.hit_from_inside = true
 	
 	r_ray.name = "R"
 	r_ray.top_level = true
+	r_ray.hit_from_inside = true
+	
+	c_ray.name = "C"
+	c_ray.top_level = true
+	c_ray.hit_from_inside = true
 	
 	self.add_child(l_ray)
 	self.add_child(r_ray)
+	self.add_child(c_ray)
 	
 	set_is_spotlight(is_spotlight)
 	set_spotlight_bound_l_angle(spotlight_bound_l_angle)
@@ -42,8 +56,9 @@ func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	if !switch: return
 	
-	switch.connect("pressed", self._on_switch_pressed)
-	switch.connect("pressed", get_parent()._on_light_switch_pressed)
+	if !switch.is_connected("pressed", self._on_switch_pressed):
+		switch.connect("pressed", self._on_switch_pressed)
+		switch.connect("pressed", get_parent()._on_light_switch_pressed)
 
 
 func set_is_spotlight(value: bool):
@@ -111,4 +126,39 @@ func is_player_in_spotlight() -> bool:
 
 func _on_switch_pressed():
 	
-	self.queue_free()
+	if is_timed:
+		
+		if turn_on:
+			
+			self.visible = true
+		else:
+		
+			self.visible = false
+		
+		$AudioStreamPlayer2D.play()
+		$SwitchOnTimer.start()
+	
+	else:
+		
+		if turn_on:
+			
+			self.visible = true
+		
+		else:
+			
+			self.queue_free()
+
+
+func _on_switch_on_timer_timeout() -> void:
+	
+	if turn_on:
+		
+		self.visible = false
+	
+	else:
+		
+		self.visible = true
+	
+	$AudioStreamPlayer2D.stop()
+	switch.enable()
+	

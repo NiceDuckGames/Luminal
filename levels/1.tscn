@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cq36ufbafffkp"]
+[gd_scene load_steps=16 format=3 uid="uid://cq36ufbafffkp"]
 
 [ext_resource type="Script" path="res://levels/template/level.gd" id="1_ns71l"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_fy66g"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="7_r0sle"]
 [ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_vprcc"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="10_3yab8"]
+[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_yeqr1"]
 
 [sub_resource type="Animation" id="Animation_lgrmi"]
 length = 0.001
@@ -29,7 +30,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Click:playing")
+tracks/1/path = NodePath("../LevelLights/PointLight2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +42,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../LevelLights/PointLight2D:visible")
+tracks/2/path = NodePath("../LevelLights/PointLight2D2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -53,7 +54,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../LevelLights/PointLight2D2:visible")
+tracks/3/path = NodePath("../LevelLights/PointLight2D3:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -65,7 +66,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../LevelLights/PointLight2D3:visible")
+tracks/4/path = NodePath("../Click:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -105,23 +106,23 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Click:playing")
+tracks/2/path = NodePath("../LevelLights/PointLight2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1.1, 1.7, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, true, true, true]
+"values": [true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../LevelLights/PointLight2D:visible")
+tracks/3/path = NodePath("../LevelLights/PointLight2D2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -129,40 +130,40 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../LevelLights/PointLight2D2:visible")
+tracks/4/path = NodePath("../LevelLights/PointLight2D3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../LevelLights/PointLight2D3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("..")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(4.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"end_level"
 }]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Click:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.6, 1.1, 1.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
@@ -171,20 +172,13 @@ _data = {
 "slide_transition": SubResource("Animation_vhlv5")
 }
 
-[sub_resource type="Gradient" id="Gradient_temuh"]
-colors = PackedColorArray(0.172549, 0.172549, 0.172549, 1, 0.172549, 0.172549, 0.172549, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rokn6"]
-gradient = SubResource("Gradient_temuh")
-width = 256
-height = 256
-fill_from = Vector2(0.5, 0.5)
-
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ns71l")
 level_name = "1"
+shrink_rate = 0.6
 
 [node name="Player" parent="." instance=ExtResource("2_fy66g")]
+visible = false
 position = Vector2(193, 188)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -230,6 +224,7 @@ energy = 4.35
 shadow_filter = 1
 texture_scale = 2.8
 switch = NodePath("../../Switches/LightSwitch")
+timer_length = 1.0
 
 [node name="Switches" type="Node2D" parent="."]
 
@@ -243,36 +238,30 @@ position = Vector2(622, 129)
 [node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("7_vprcc")]
 position = Vector2(50, 350)
 size = Vector2(100, 700)
-occluder_margin = 10.0
 
 [node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_vprcc")]
 position = Vector2(1450, 350)
 size = Vector2(100, 700)
-occluder_margin = 10.0
 
 [node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_vprcc")]
 position = Vector2(750, 50)
 rotation = 1.5708
 size = Vector2(100, 1500)
-occluder_margin = 10.0
 
 [node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_vprcc")]
 position = Vector2(751, 650)
 rotation = 1.5708
 size = Vector2(100, 1500)
-occluder_margin = 10.0
 
 [node name="Walls" type="Node2D" parent="LevelGeometry"]
 
 [node name="LevelBlock" parent="LevelGeometry/Walls" instance=ExtResource("7_vprcc")]
 position = Vector2(517, 189)
 size = Vector2(100, 200)
-occluder_margin = 10.0
 
 [node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("7_vprcc")]
 position = Vector2(743, 103)
 size = Vector2(100, 200)
-occluder_margin = 10.0
 
 [node name="NoGrows" type="Node2D" parent="."]
 
@@ -284,6 +273,7 @@ energy = 5.5
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
+shadow_filter = 1
 texture = ExtResource("10_3yab8")
 texture_scale = 3.8
 
@@ -293,6 +283,7 @@ energy = 5.5
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
+shadow_filter = 1
 texture = ExtResource("10_3yab8")
 texture_scale = 4.95
 
@@ -302,6 +293,7 @@ energy = 1.85
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
+shadow_filter = 1
 texture = ExtResource("10_3yab8")
 texture_scale = 6.25
 
@@ -311,19 +303,22 @@ position = Vector2(1330, 532)
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
+[node name="BackgroundColor" type="ColorRect" parent="Background"]
 self_modulate = Color(1, 1, 1, 0.494118)
 offset_left = -185.0
 offset_top = -93.0
 offset_right = 1791.0
 offset_bottom = 1037.0
-texture = SubResource("GradientTexture2D_rokn6")
+color = Color(0.172549, 0.172549, 0.172549, 1)
+script = ExtResource("10_yeqr1")
 
 [node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2kpj5")
-volume_db = -35.052
+volume_db = -23.0
 pitch_scale = 0.83
 autoplay = true
+bus = &"Music"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_r0sle")
+bus = &"Effects"

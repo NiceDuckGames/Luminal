@@ -1,0 +1,474 @@
+[gd_scene load_steps=21 format=3 uid="uid://bp1f24mpxgtee"]
+
+[ext_resource type="Script" path="res://levels/template/level.gd" id="1_squhk"]
+[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_pgu44"]
+[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_p3y5m"]
+[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_bdinh"]
+[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_ov5m7"]
+[ext_resource type="Texture2D" uid="uid://bcnesji8o5vvj" path="res://assets/spot_light_gradient_90d.png" id="6_gbwdg"]
+[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="7_gqda1"]
+[ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="8_6efp0"]
+[ext_resource type="PackedScene" uid="uid://o351i6yb1x1u" path="res://level_components/invert_switch.tscn" id="8_gpyhp"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="9_i63wh"]
+[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="10_6ojo8"]
+[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="11_1yew1"]
+[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="12_nww84"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="13_v00fi"]
+
+[sub_resource type="Animation" id="Animation_lgrmi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Click:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../LevelLights/PointLight2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../LevelLights/PointLight2D2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../LevelLights/PointLight2D3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vhlv5"]
+resource_name = "slide_transition"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Click:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.1, 1.7, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../LevelLights/PointLight2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../LevelLights/PointLight2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../LevelLights/PointLight2D3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide_lights"
+}, {
+"args": [],
+"method": &"end_level"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
+_data = {
+"RESET": SubResource("Animation_lgrmi"),
+"slide_transition": SubResource("Animation_vhlv5")
+}
+
+[sub_resource type="Animation" id="Animation_tunm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ukre7"]
+resource_name = "rotate"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.785398, 4.10152, 0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usq5c"]
+_data = {
+"RESET": SubResource("Animation_tunm7"),
+"rotate": SubResource("Animation_ukre7")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_squhk")
+level_name = "9"
+shrink_rate = 0.7
+
+[node name="Player" parent="." instance=ExtResource("2_pgu44")]
+position = Vector2(-11, 237)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../UI")
+libraries = {
+"": SubResource("AnimationLibrary_uuwds")
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 2
+layer = 2
+script = ExtResource("3_p3y5m")
+
+[node name="Label" type="Label" parent="UI"]
+visible = false
+offset_left = 481.0
+offset_top = 6.0
+offset_right = 586.0
+offset_bottom = 32.0
+text = "GAME OVER"
+
+[node name="Control" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Control"]
+layout_mode = 0
+offset_right = 2354.0
+offset_bottom = 1478.0
+color = Color(0.113725, 0.113725, 0.133333, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("4_bdinh")
+
+[node name="SwitchLight" parent="Lights" instance=ExtResource("5_ov5m7")]
+z_index = 2
+position = Vector2(752, 528)
+color = Color(0.298039, 0.67451, 1, 1)
+energy = 5.8
+shadow_filter = 1
+texture_scale = 4.35
+timer_length = 1.0
+
+[node name="SwitchLight2" parent="Lights" instance=ExtResource("5_ov5m7")]
+z_index = 2
+position = Vector2(768, 1078)
+color = Color(1, 0.235294, 0.192157, 1)
+energy = 9.9
+shadow_filter = 1
+texture = ExtResource("6_gbwdg")
+texture_scale = 4.9
+is_spotlight = true
+spotlight_bound_l_angle = 89.53
+spotlight_bound_r_angle = 87.965
+timer_length = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/SwitchLight2"]
+autoplay = "rotate"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_usq5c")
+}
+
+[node name="SwitchLight3" parent="Lights" node_paths=PackedStringArray("switch") instance=ExtResource("5_ov5m7")]
+z_index = 2
+position = Vector2(1449, 245)
+rotation = 0.785398
+color = Color(0.113725, 0.541176, 0.192157, 1)
+energy = 9.9
+shadow_filter = 1
+texture = ExtResource("6_gbwdg")
+texture_scale = 4.75
+switch = NodePath("../../Switches/LightSwitch2")
+is_spotlight = true
+spotlight_bound_l_angle = 89.53
+spotlight_bound_r_angle = 87.965
+is_timed = true
+timer_length = 1.5
+
+[node name="SwitchLight4" parent="Lights" instance=ExtResource("5_ov5m7")]
+position = Vector2(-282, 1109)
+color = Color(1, 1, 0.352941, 1)
+energy = 6.2
+texture_scale = 2.65
+timer_length = 1.0
+
+[node name="Switches" type="Node2D" parent="."]
+
+[node name="LightSwitch2" parent="Switches" instance=ExtResource("7_gqda1")]
+position = Vector2(472, 544)
+
+[node name="InvertSwitch" parent="Switches" node_paths=PackedStringArray("level") instance=ExtResource("8_gpyhp")]
+position = Vector2(760, 528)
+level = NodePath("../..")
+
+[node name="LevelGeometry" type="Node2D" parent="."]
+
+[node name="Boundary" type="Node2D" parent="LevelGeometry"]
+
+[node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(-420, 953)
+size = Vector2(100, 991)
+
+[node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(1619, 604)
+size = Vector2(100, 1212)
+
+[node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(700, 48)
+rotation = 1.5708
+size = Vector2(100, 1800)
+
+[node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(707, 1160)
+rotation = 1.5708
+size = Vector2(100, 1800)
+
+[node name="LevelBlock5" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(-150, 232)
+size = Vector2(100, 300)
+
+[node name="LevelBlock6" parent="LevelGeometry/Boundary" instance=ExtResource("8_6efp0")]
+position = Vector2(-50, 416)
+size = Vector2(300, 100)
+
+[node name="Walls" type="Node2D" parent="LevelGeometry"]
+
+[node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(248, 416)
+size = Vector2(300, 100)
+
+[node name="LevelBlock10" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(742, 416)
+size = Vector2(400, 100)
+
+[node name="LevelBlock14" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(1271, 416)
+size = Vector2(300, 100)
+
+[node name="LevelBlock3" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(348, 512)
+size = Vector2(100, 200)
+
+[node name="LevelBlock15" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(-150, 1136)
+size = Vector2(100, 625)
+
+[node name="LevelBlock9" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(592, 512)
+size = Vector2(100, 291)
+
+[node name="LevelBlock11" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(924, 512)
+size = Vector2(100, 291)
+
+[node name="LevelBlock12" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(1171, 512)
+size = Vector2(100, 291)
+
+[node name="LevelBlock8" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(448, 607)
+size = Vector2(300, 100)
+
+[node name="LevelBlock16" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(-283, 1398)
+size = Vector2(300, 100)
+
+[node name="LevelBlock13" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(1034, 607)
+size = Vector2(300, 100)
+
+[node name="LevelBlock6" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(-74, 557)
+size = Vector2(750, 200)
+
+[node name="LevelBlock7" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(627, 866)
+
+[node name="LevelBlock17" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(215, 878)
+rotation = 0.235619
+
+[node name="LevelBlock4" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(899, 866)
+
+[node name="LevelBlock5" parent="LevelGeometry/Walls" instance=ExtResource("8_6efp0")]
+position = Vector2(1200, 889)
+rotation = -0.418879
+
+[node name="NoGrows" type="Node2D" parent="."]
+
+[node name="LevelLights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="LevelLights"]
+position = Vector2(-454, 423)
+energy = 5.5
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("9_i63wh")
+texture_scale = 3.8
+
+[node name="PointLight2D2" type="PointLight2D" parent="LevelLights"]
+position = Vector2(1304, -594)
+energy = 5.5
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("9_i63wh")
+texture_scale = 4.95
+
+[node name="PointLight2D3" type="PointLight2D" parent="LevelLights"]
+position = Vector2(1580, 1300)
+energy = 1.85
+range_layer_min = -512
+range_layer_max = 512
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("9_i63wh")
+texture_scale = 6.25
+
+[node name="Finish" parent="." instance=ExtResource("10_6ojo8")]
+position = Vector2(-280, 1269)
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundColor" type="ColorRect" parent="Background"]
+self_modulate = Color(1, 1, 1, 0.494118)
+offset_left = -499.0
+offset_top = -93.0
+offset_right = 1791.0
+offset_bottom = 1459.0
+color = Color(0.172549, 0.172549, 0.172549, 1)
+script = ExtResource("11_1yew1")
+
+[node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nww84")
+volume_db = -23.0
+pitch_scale = 0.83
+autoplay = true
+bus = &"Music"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_v00fi")
+bus = &"Effects"

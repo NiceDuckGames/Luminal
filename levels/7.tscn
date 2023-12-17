@@ -1,17 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpbbji5h6cqmk"]
+[gd_scene load_steps=16 format=3 uid="uid://dpfrs5mwgqavr"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_d86t6"]
-[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_yvve1"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_irdli"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_nm0r5"]
-[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_3jonf"]
-[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="6_xef71"]
-[ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_0ojr4"]
-[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="9_p7wo5"]
-[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="10_0q5ak"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_a6ajh"]
-[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_hq4u8"]
-[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="11_uhpi3"]
+[ext_resource type="Script" path="res://levels/template/level.gd" id="1_iqd57"]
+[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_l0kvc"]
+[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_80bhi"]
+[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_kso66"]
+[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_ipwfy"]
+[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="6_ymwbj"]
+[ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_kf4u7"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="8_anujo"]
+[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="9_6seot"]
+[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_vmotj"]
+[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_ctej6"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="12_cf5a0"]
 
 [sub_resource type="Animation" id="Animation_lgrmi"]
 length = 0.001
@@ -158,7 +158,7 @@ tracks/6/path = NodePath("..")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(3, 4.2),
+"times": PackedFloat32Array(3, 4.1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -176,12 +176,13 @@ _data = {
 }
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_d86t6")
-level_name = "2"
+script = ExtResource("1_iqd57")
+level_name = "7"
 shrink_rate = 0.6
+grow_rate = 0.4
 
-[node name="Player" parent="." instance=ExtResource("2_yvve1")]
-position = Vector2(193, 188)
+[node name="Player" parent="." instance=ExtResource("2_l0kvc")]
+position = Vector2(-11, 237)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../UI")
@@ -192,7 +193,7 @@ libraries = {
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
 layer = 2
-script = ExtResource("3_irdli")
+script = ExtResource("3_80bhi")
 
 [node name="Label" type="Label" parent="UI"]
 visible = false
@@ -216,69 +217,75 @@ offset_bottom = 1478.0
 color = Color(0.113725, 0.113725, 0.133333, 1)
 
 [node name="Lights" type="Node2D" parent="."]
-script = ExtResource("4_nm0r5")
+script = ExtResource("4_kso66")
 
-[node name="SwitchLight" parent="Lights" node_paths=PackedStringArray("switch") instance=ExtResource("5_3jonf")]
+[node name="SwitchLight" parent="Lights" instance=ExtResource("5_ipwfy")]
 z_index = 2
-position = Vector2(1006, 517)
-color = Color(0.662745, 1, 0.756863, 1)
-energy = 4.35
+position = Vector2(1137, 210)
+color = Color(0.431373, 1, 1, 1)
+energy = 5.8
 shadow_filter = 1
-texture_scale = 2.8
-switch = NodePath("../../Switches/LightSwitch")
-timer_length = 2.0
-
-[node name="SwitchLight2" parent="Lights" instance=ExtResource("5_3jonf")]
-z_index = 2
-position = Vector2(1337, 155)
-color = Color(1, 0.443137, 0.45098, 1)
-energy = 4.35
-shadow_filter = 1
-texture_scale = 2.8
+texture_scale = 4.1
 timer_length = 1.0
+
+[node name="SwitchLight2" parent="Lights" node_paths=PackedStringArray("switch") instance=ExtResource("5_ipwfy")]
+z_index = 2
+position = Vector2(598, 921)
+color = Color(1, 0.235294, 0.192157, 1)
+energy = 5.8
+shadow_filter = 1
+texture_scale = 3.75
+switch = NodePath("../../Switches/LightSwitch")
+is_timed = true
+timer_length = 5.0
 
 [node name="Switches" type="Node2D" parent="."]
 
-[node name="LightSwitch" parent="Switches" instance=ExtResource("6_xef71")]
-position = Vector2(563, 875)
+[node name="LightSwitch" parent="Switches" instance=ExtResource("6_ymwbj")]
+position = Vector2(272, 186)
 
 [node name="LevelGeometry" type="Node2D" parent="."]
 
 [node name="Boundary" type="Node2D" parent="LevelGeometry"]
 
-[node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(51, 532)
-size = Vector2(100, 1000)
+[node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(50, 808)
+size = Vector2(100, 800)
 
-[node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(1451, 532)
-size = Vector2(100, 1000)
+[node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(1450, 608)
+size = Vector2(100, 1200)
 
-[node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(750, 50)
+[node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(650, 48)
+rotation = 1.5708
+size = Vector2(100, 1700)
+
+[node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(752, 1160)
 rotation = 1.5708
 size = Vector2(100, 1500)
 
-[node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(751, 982)
-rotation = 1.5708
-size = Vector2(100, 1500)
+[node name="LevelBlock5" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(-150, 232)
+size = Vector2(100, 300)
+
+[node name="LevelBlock6" parent="LevelGeometry/Boundary" instance=ExtResource("7_kf4u7")]
+position = Vector2(-50, 416)
+size = Vector2(300, 100)
 
 [node name="Walls" type="Node2D" parent="LevelGeometry"]
 
-[node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(459, 259)
-size = Vector2(100, 400)
+[node name="LevelBlock" parent="LevelGeometry/Walls" instance=ExtResource("7_kf4u7")]
+position = Vector2(408, 231)
+size = Vector2(100, 300)
 
-[node name="LevelBlock4" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(459, 806)
-size = Vector2(100, 400)
+[node name="LevelBlock3" parent="LevelGeometry/Walls" instance=ExtResource("7_kf4u7")]
+position = Vector2(264, 609)
+size = Vector2(400, 100)
 
-[node name="LevelBlock3" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(726, 745)
-
-[node name="LevelBlock5" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(1115, 411)
+[node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("7_kf4u7")]
+position = Vector2(809, 612)
 
 [node name="NoGrows" type="Node2D" parent="."]
 
@@ -291,7 +298,7 @@ range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_anujo")
 texture_scale = 3.8
 
 [node name="PointLight2D2" type="PointLight2D" parent="LevelLights"]
@@ -301,21 +308,21 @@ range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_anujo")
 texture_scale = 4.95
 
 [node name="PointLight2D3" type="PointLight2D" parent="LevelLights"]
-position = Vector2(347, 1219)
+position = Vector2(1580, 1300)
 energy = 1.85
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_anujo")
 texture_scale = 6.25
 
-[node name="Finish" parent="." instance=ExtResource("10_0q5ak")]
-position = Vector2(1320, 174)
+[node name="Finish" parent="." instance=ExtResource("9_6seot")]
+position = Vector2(1278, 989)
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -327,15 +334,15 @@ offset_top = -93.0
 offset_right = 1791.0
 offset_bottom = 1037.0
 color = Color(0.172549, 0.172549, 0.172549, 1)
-script = ExtResource("10_a6ajh")
+script = ExtResource("10_vmotj")
 
 [node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_hq4u8")
+stream = ExtResource("11_ctej6")
 volume_db = -23.0
 pitch_scale = 0.83
 autoplay = true
 bus = &"Music"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_uhpi3")
+stream = ExtResource("12_cf5a0")
 bus = &"Effects"

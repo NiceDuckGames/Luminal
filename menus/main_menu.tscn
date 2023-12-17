@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cx4nmp1823qts"]
+[gd_scene load_steps=31 format=3 uid="uid://cx4nmp1823qts"]
 
 [ext_resource type="Script" path="res://menus/main_menu.gd" id="1_fk5q6"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="2_vlnb6"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="4_roc3l"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="5_xjsrx"]
 [ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="6_1o4fd"]
-[ext_resource type="PackedScene" uid="uid://cuu2h435ku8em" path="res://cursor_shadow.tscn" id="7_2t1cw"]
+[ext_resource type="PackedScene" uid="uid://cuu2h435ku8em" path="res://menus/cursor_shadow.tscn" id="7_2t1cw"]
 
 [sub_resource type="Animation" id="Animation_kpuio"]
 length = 0.001
@@ -82,6 +82,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Credits:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_gpepc"]
 resource_name = "light off"
@@ -144,6 +156,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Credits:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_c14eb"]
@@ -238,6 +262,18 @@ tracks/6/keys = {
 "method": &"set_startup_to_false"
 }]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Credits:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njqul"]
 _data = {
@@ -282,7 +318,7 @@ polygon = PackedVector2Array(793, 53, 808, 53, 808, 131, 810, 136, 814, 139, 819
 
 [sub_resource type="Theme" id="Theme_vo2f2"]
 Button/colors/font_color = Color(0.745098, 0.745098, 0.745098, 1)
-Button/colors/font_focus_color = Color(0.745098, 0.745098, 0.745098, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(0.87451, 0.87451, 0.87451, 1)
 Button/colors/font_outline_color = Color(0.14902, 0.14902, 0.172549, 1)
@@ -295,6 +331,16 @@ Button/styles/focus = SubResource("StyleBoxEmpty_xcj8f")
 Button/styles/hover = SubResource("StyleBoxEmpty_dgxk6")
 Button/styles/normal = SubResource("StyleBoxEmpty_y8rh0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_3pfug")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5psq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym3ye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6goc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85vtf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u34o"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -315,11 +361,10 @@ libraries = {
 "": SubResource("AnimationLibrary_njqul")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(752, 145)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vlnb6")
-volume_db = 9.8
 pitch_scale = 0.76
+bus = &"Effects"
 
 [node name="MenuContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -381,22 +426,56 @@ alignment = 1
 
 [node name="Play" type="Button" parent="MenuContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_right = NodePath("../Settings")
+focus_next = NodePath(".")
 mouse_default_cursor_shape = 2
 text = " "
 
 [node name="Settings" type="Button" parent="MenuContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Play")
+focus_neighbor_right = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Play")
 mouse_default_cursor_shape = 2
 text = " "
 
 [node name="Exit" type="Button" parent="MenuContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_right = NodePath("../../../Credits")
+focus_neighbor_bottom = NodePath("../../../Credits")
+focus_next = NodePath("../../../Credits")
+focus_previous = NodePath("../Settings")
 mouse_default_cursor_shape = 2
 text = " "
+
+[node name="Credits" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_neighbor_left = NodePath("../MenuContainer/HBoxContainer/Exit")
+focus_neighbor_top = NodePath("../MenuContainer/HBoxContainer/Exit")
+focus_previous = NodePath("../MenuContainer/HBoxContainer/Exit")
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_roc3l")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5psq7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ym3ye")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_r6goc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_85vtf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4u34o")
+text = "Credits"
 
 [node name="CursorShadow" parent="." instance=ExtResource("7_2t1cw")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="visibility_changed" from="MenuContainer/Title/PointLight2D" to="MenuContainer" method="_on_point_light_2d_visibility_changed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MenuContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

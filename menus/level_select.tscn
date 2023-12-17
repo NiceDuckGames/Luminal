@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://d040tk8ig65qq"]
+[gd_scene load_steps=18 format=3 uid="uid://d040tk8ig65qq"]
 
 [ext_resource type="Script" path="res://menus/level_select.gd" id="1_ghv5g"]
 [ext_resource type="FontFile" uid="uid://bf3lgo13uua43" path="res://assets/fonts/Righteous-Regular.ttf" id="2_5ebmr"]
-[ext_resource type="Texture2D" uid="uid://bcnesji8o5vvj" path="res://assets/spot_light_gradient_90d.png" id="2_8g3l5"]
+[ext_resource type="Script" path="res://menus/back_button.gd" id="3_fewfe"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="4_aa34o"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="4_s76km"]
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="5_624om"]
-[ext_resource type="PackedScene" uid="uid://cuu2h435ku8em" path="res://cursor_shadow.tscn" id="6_b8i11"]
+[ext_resource type="PackedScene" uid="uid://cuu2h435ku8em" path="res://menus/cursor_shadow.tscn" id="6_b8i11"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q767"]
 
@@ -24,7 +25,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +37,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PointLight2D2:visible")
+tracks/1/path = NodePath("MarginContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,34 +49,10 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/path = NodePath("Control/Title:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Title:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -87,58 +64,34 @@ resource_name = "back_transition"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PointLight2D2:visible")
+tracks/1/path = NodePath("MarginContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/path = NodePath("Control/Title:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Title:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -150,19 +103,19 @@ resource_name = "start_transition"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D:visible")
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PointLight2D2:visible")
+tracks/1/path = NodePath("MarginContainer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -171,37 +124,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [false, true]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -226,6 +155,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_neighbor_top = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_neighbor_right = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_neighbor_bottom = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_next = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_previous = NodePath("MarginContainer/PanelContainer/VBoxContainer/Control/BackButton")
+focus_mode = 2
 script = ExtResource("1_ghv5g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -250,18 +186,20 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 125
+theme_override_constants/margin_top = -25
+theme_override_constants/margin_bottom = 50
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="HFlowContainer" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = -30
+columns = 5
 
 [node name="Control" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -276,7 +214,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.12549, 0.12549, 0.12549, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.509804, 0.509804, 0.509804, 1)
-theme_override_colors/font_focus_color = Color(0.12549, 0.12549, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.509804, 0.509804, 0.509804, 1)
 theme_override_fonts/font = ExtResource("2_5ebmr")
 theme_override_font_sizes/font_size = 136
 theme_override_styles/normal = SubResource("StyleBoxEmpty_51uht")
@@ -284,26 +222,14 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_cr3ht")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ul2k")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_5v62x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0pecn")
+action_mode = 0
 text = "<"
+script = ExtResource("3_fewfe")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton"]
 visible = false
-position = Vector2(3, -2)
-rotation = -1.5708
-range_layer_min = -512
-range_layer_max = 512
-shadow_enabled = true
-texture = ExtResource("2_8g3l5")
-texture_scale = 3.8
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(1162, 0)
-range_layer_min = -512
-range_layer_max = 512
-shadow_enabled = true
-texture = ExtResource("2_8g3l5")
-texture_scale = 3.45
+position = Vector2(60, 86)
+texture = ExtResource("4_aa34o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "start_transition"
@@ -311,11 +237,10 @@ libraries = {
 "": SubResource("AnimationLibrary_qxjy0")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(93, 567)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_s76km")
-volume_db = 9.8
 pitch_scale = 0.76
+bus = &"Effects"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
@@ -334,5 +259,10 @@ horizontal_alignment = 1
 
 [node name="CursorShadow" parent="." instance=ExtResource("6_b8i11")]
 
+[connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" method="_on_button_down"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" method="_on_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Control/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

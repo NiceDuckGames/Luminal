@@ -6,19 +6,18 @@
 resource_local_to_scene = true
 size = Vector2(100, 100)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ko6os"]
-polygon = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ju1u8"]
+polygon = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
 
 [node name="LevelBlock" type="StaticBody2D"]
 script = ExtResource("1_ydb2s")
 size = Vector2(100, 100)
-occluder_margin = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8j43m")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_ko6os")
+occluder = SubResource("OccluderPolygon2D_ju1u8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

@@ -1,17 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpbbji5h6cqmk"]
+[gd_scene load_steps=19 format=3 uid="uid://ba8a1o3f0pws2"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_d86t6"]
-[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_yvve1"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_irdli"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_nm0r5"]
-[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_3jonf"]
-[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="6_xef71"]
-[ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_0ojr4"]
-[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="9_p7wo5"]
-[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="10_0q5ak"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_a6ajh"]
-[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_hq4u8"]
-[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="11_uhpi3"]
+[ext_resource type="Script" path="res://levels/template/level.gd" id="1_a5lts"]
+[ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_q611s"]
+[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_8w06n"]
+[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_5xbxn"]
+[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_frqde"]
+[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="6_geue4"]
+[ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_f6sj4"]
+[ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="8_grjcs"]
+[ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="9_u10rl"]
+[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_b8kje"]
+[ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_lip5o"]
+[ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="12_xa0vm"]
 
 [sub_resource type="Animation" id="Animation_lgrmi"]
 length = 0.001
@@ -158,7 +158,7 @@ tracks/6/path = NodePath("..")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(3, 4.2),
+"times": PackedFloat32Array(3, 4.1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -175,13 +175,53 @@ _data = {
 "slide_transition": SubResource("Animation_vhlv5")
 }
 
-[node name="Level" type="Node2D"]
-script = ExtResource("1_d86t6")
-level_name = "2"
-shrink_rate = 0.6
+[sub_resource type="Animation" id="Animation_sr8au"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(512, 320)]
+}
 
-[node name="Player" parent="." instance=ExtResource("2_yvve1")]
-position = Vector2(193, 188)
+[sub_resource type="Animation" id="Animation_o4y0h"]
+resource_name = "move_light"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(512, 320), Vector2(512, 648), Vector2(512, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yviad"]
+_data = {
+"RESET": SubResource("Animation_sr8au"),
+"move_light": SubResource("Animation_o4y0h")
+}
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_a5lts")
+level_name = "5"
+shrink_rate = 0.7
+grow_rate = 0.0
+
+[node name="Player" parent="." instance=ExtResource("2_q611s")]
+visible = false
+position = Vector2(-945, 484)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../UI")
@@ -192,7 +232,7 @@ libraries = {
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 2
 layer = 2
-script = ExtResource("3_irdli")
+script = ExtResource("3_8w06n")
 
 [node name="Label" type="Label" parent="UI"]
 visible = false
@@ -216,126 +256,166 @@ offset_bottom = 1478.0
 color = Color(0.113725, 0.113725, 0.133333, 1)
 
 [node name="Lights" type="Node2D" parent="."]
-script = ExtResource("4_nm0r5")
+script = ExtResource("4_5xbxn")
 
-[node name="SwitchLight" parent="Lights" node_paths=PackedStringArray("switch") instance=ExtResource("5_3jonf")]
+[node name="SwitchLight" parent="Lights" node_paths=PackedStringArray("switch") instance=ExtResource("5_frqde")]
 z_index = 2
-position = Vector2(1006, 517)
-color = Color(0.662745, 1, 0.756863, 1)
-energy = 4.35
+position = Vector2(512, 320)
+color = Color(0.431373, 1, 1, 1)
+energy = 5.8
 shadow_filter = 1
-texture_scale = 2.8
+texture_scale = 4.1
 switch = NodePath("../../Switches/LightSwitch")
-timer_length = 2.0
+timer_length = 1.0
 
-[node name="SwitchLight2" parent="Lights" instance=ExtResource("5_3jonf")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights/SwitchLight"]
+autoplay = "move_light"
+libraries = {
+"": SubResource("AnimationLibrary_yviad")
+}
+
+[node name="SwitchLight3" parent="Lights" instance=ExtResource("5_frqde")]
 z_index = 2
-position = Vector2(1337, 155)
-color = Color(1, 0.443137, 0.45098, 1)
-energy = 4.35
+position = Vector2(-1028, 790)
+rotation = -2.35619
+color = Color(0.431373, 1, 1, 1)
+energy = 6.0
 shadow_filter = 1
-texture_scale = 2.8
+texture_scale = 0.95
+spotlight_bound_l_angle = 89.035
+spotlight_bound_r_angle = 88.47
 timer_length = 1.0
 
 [node name="Switches" type="Node2D" parent="."]
 
-[node name="LightSwitch" parent="Switches" instance=ExtResource("6_xef71")]
-position = Vector2(563, 875)
+[node name="LightSwitch" parent="Switches" instance=ExtResource("6_geue4")]
+position = Vector2(642, 909)
 
 [node name="LevelGeometry" type="Node2D" parent="."]
 
 [node name="Boundary" type="Node2D" parent="LevelGeometry"]
 
-[node name="LevelBlock" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(51, 532)
-size = Vector2(100, 1000)
+[node name="LevelBlock12" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(50, 860)
+size = Vector2(100, 450)
 
-[node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(1451, 532)
-size = Vector2(100, 1000)
+[node name="LevelBlock3" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(766, 602)
+size = Vector2(100, 966)
 
-[node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(750, 50)
+[node name="LevelBlock2" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(513, 169)
 rotation = 1.5708
-size = Vector2(100, 1500)
+size = Vector2(100, 600)
 
-[node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_0ojr4")]
-position = Vector2(751, 982)
+[node name="LevelBlock4" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(414, 1035)
 rotation = 1.5708
-size = Vector2(100, 1500)
+size = Vector2(100, 800)
+
+[node name="LevelBlock5" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-1084, 598)
+size = Vector2(100, 600)
+
+[node name="LevelBlock8" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-678, 398)
+size = Vector2(100, 200)
+
+[node name="LevelBlock9" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-678, 798)
+size = Vector2(100, 200)
+
+[node name="LevelBlock10" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-887, 348)
+size = Vector2(400, 100)
+
+[node name="LevelBlock11" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-887, 848)
+size = Vector2(400, 100)
+
+[node name="LevelBlock6" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-328, 685)
+size = Vector2(800, 100)
+
+[node name="LevelBlock7" parent="LevelGeometry/Boundary" instance=ExtResource("7_f6sj4")]
+position = Vector2(-328, 515)
+size = Vector2(800, 100)
 
 [node name="Walls" type="Node2D" parent="LevelGeometry"]
 
-[node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(459, 259)
-size = Vector2(100, 400)
+[node name="LevelBlock2" parent="LevelGeometry/Walls" instance=ExtResource("7_f6sj4")]
+position = Vector2(263, 403)
+size = Vector2(100, 500)
 
-[node name="LevelBlock4" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(459, 806)
-size = Vector2(100, 400)
+[node name="LevelBlock4" parent="LevelGeometry/Walls" instance=ExtResource("7_f6sj4")]
+position = Vector2(152, 515)
+size = Vector2(200, 100)
 
-[node name="LevelBlock3" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(726, 745)
+[node name="LevelBlock6" parent="LevelGeometry/Walls" instance=ExtResource("7_f6sj4")]
+position = Vector2(516, 732)
 
-[node name="LevelBlock5" parent="LevelGeometry/Walls" instance=ExtResource("7_0ojr4")]
-position = Vector2(1115, 411)
+[node name="LevelBlock7" parent="LevelGeometry/Walls" instance=ExtResource("7_f6sj4")]
+position = Vector2(263, 832)
 
 [node name="NoGrows" type="Node2D" parent="."]
 
 [node name="LevelLights" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="LevelLights"]
-position = Vector2(-454, 423)
+position = Vector2(-266, 380)
+color = Color(1, 0.262745, 0.188235, 1)
 energy = 5.5
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_grjcs")
 texture_scale = 3.8
 
 [node name="PointLight2D2" type="PointLight2D" parent="LevelLights"]
-position = Vector2(1304, -594)
+position = Vector2(1187, 452)
+color = Color(1, 0.262745, 0.188235, 1)
 energy = 5.5
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_grjcs")
 texture_scale = 4.95
 
 [node name="PointLight2D3" type="PointLight2D" parent="LevelLights"]
-position = Vector2(347, 1219)
-energy = 1.85
+position = Vector2(-1108, 1095)
+color = Color(1, 0.262745, 0.188235, 1)
+energy = 5.4
 range_layer_min = -512
 range_layer_max = 512
 shadow_enabled = true
 shadow_filter = 1
-texture = ExtResource("9_p7wo5")
+texture = ExtResource("8_grjcs")
 texture_scale = 6.25
 
-[node name="Finish" parent="." instance=ExtResource("10_0q5ak")]
-position = Vector2(1320, 174)
+[node name="Finish" parent="." instance=ExtResource("9_u10rl")]
+position = Vector2(514, 316)
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="BackgroundColor" type="ColorRect" parent="Background"]
 self_modulate = Color(1, 1, 1, 0.494118)
-offset_left = -185.0
+offset_left = -1193.0
 offset_top = -93.0
 offset_right = 1791.0
 offset_bottom = 1037.0
 color = Color(0.172549, 0.172549, 0.172549, 1)
-script = ExtResource("10_a6ajh")
+script = ExtResource("10_b8kje")
 
 [node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_hq4u8")
+stream = ExtResource("11_lip5o")
 volume_db = -23.0
 pitch_scale = 0.83
 autoplay = true
 bus = &"Music"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_uhpi3")
+stream = ExtResource("12_xa0vm")
 bus = &"Effects"

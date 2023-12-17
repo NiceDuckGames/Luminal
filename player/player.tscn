@@ -47,16 +47,6 @@ texture = ExtResource("1_kttnj")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.525, 0.525)
 
-[node name="PinchDetectorL" type="RayCast2D" parent="."]
-top_level = true
-target_position = Vector2(-100, 0)
-hit_from_inside = true
-
-[node name="PinchDetectorR" type="RayCast2D" parent="."]
-top_level = true
-target_position = Vector2(0, -100)
-hit_from_inside = true
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 3.95
 range_layer_min = -512
