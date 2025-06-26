@@ -10,15 +10,15 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q767"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51uht"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pecn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v62x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cr3ht"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ul2k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5v62x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pecn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51uht"]
 
 [sub_resource type="Animation" id="Animation_pb6x6"]
 length = 0.001
@@ -210,17 +210,17 @@ offset_top = -115.0
 offset_right = 66.0
 offset_bottom = 62.0
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.12549, 0.12549, 0.12549, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_color = Color(0.12549, 0.12549, 0.12549, 1)
 theme_override_fonts/font = ExtResource("2_5ebmr")
 theme_override_font_sizes/font_size = 136
-theme_override_styles/normal = SubResource("StyleBoxEmpty_51uht")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0pecn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5v62x")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_cr3ht")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ul2k")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5v62x")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0pecn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_51uht")
 action_mode = 0
 text = "<"
 script = ExtResource("3_fewfe")
@@ -231,10 +231,10 @@ position = Vector2(60, 86)
 texture = ExtResource("4_aa34o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "start_transition"
 libraries = {
 "": SubResource("AnimationLibrary_qxjy0")
 }
+autoplay = "start_transition"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_s76km")

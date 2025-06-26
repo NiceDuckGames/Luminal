@@ -332,15 +332,15 @@ Button/styles/hover = SubResource("StyleBoxEmpty_dgxk6")
 Button/styles/normal = SubResource("StyleBoxEmpty_y8rh0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_3pfug")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5psq7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u34o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85vtf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym3ye"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6goc"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85vtf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u34o"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5psq7"]
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -356,10 +356,10 @@ mouse_filter = 1
 color = Color(0.270588, 0.270588, 0.305882, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "light_on"
 libraries = {
 "": SubResource("AnimationLibrary_njqul")
 }
+autoplay = "light_on"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vlnb6")
@@ -465,17 +465,17 @@ size_flags_vertical = 8
 focus_neighbor_left = NodePath("../MenuContainer/HBoxContainer/Exit")
 focus_neighbor_top = NodePath("../MenuContainer/HBoxContainer/Exit")
 focus_previous = NodePath("../MenuContainer/HBoxContainer/Exit")
-theme_override_colors/font_color = Color(0.54902, 0.54902, 0.54902, 1)
-theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.54902, 1)
 theme_override_fonts/font = ExtResource("4_roc3l")
 theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5psq7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4u34o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_85vtf")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ym3ye")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_r6goc")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_85vtf")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4u34o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5psq7")
 text = "Credits"
 
 [node name="CursorShadow" parent="." instance=ExtResource("7_2t1cw")]

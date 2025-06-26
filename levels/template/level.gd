@@ -342,4 +342,3 @@ func end_level():
 	
 	var level_select = load("res://menus/level_select.tscn")
 	get_tree().change_scene_to_packed(level_select)
-

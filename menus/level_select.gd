@@ -26,7 +26,7 @@ func _ready() -> void:
 				var item = level_item_res.instantiate()
 				
 				item.set_level_name(file_name.get_basename().get_basename())
-				item.level_file_path = "res://levels/" + file_name.get_basename()
+				item.level_file_path = "res://levels/" + file_name
 				
 				if LevelTracker.is_level_completed(file_name.get_basename().get_basename()):
 					item.set_completed()

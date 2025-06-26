@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Gputeks-Bold.ttf-153ce1dfe3c5877976e2f8fedf41
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

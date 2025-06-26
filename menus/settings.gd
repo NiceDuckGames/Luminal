@@ -167,4 +167,3 @@ func return_to_main_screen():
 func _on_back_button_pressed() -> void:
 	
 	$AnimationPlayer.play("go_back")
-
