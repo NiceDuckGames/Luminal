@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://d040tk8ig65qq"]
 
-[ext_resource type="Script" path="res://menus/level_select.gd" id="1_ghv5g"]
+[ext_resource type="Script" uid="uid://buf6ugaft2l8l" path="res://menus/level_select.gd" id="1_ghv5g"]
 [ext_resource type="FontFile" uid="uid://bf3lgo13uua43" path="res://assets/fonts/Righteous-Regular.ttf" id="2_5ebmr"]
-[ext_resource type="Script" path="res://menus/back_button.gd" id="3_fewfe"]
+[ext_resource type="Script" uid="uid://ccu1qbh50gykp" path="res://menus/back_button.gd" id="3_fewfe"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="4_aa34o"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="4_s76km"]
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="5_624om"]
@@ -144,9 +144,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qxjy0"]
 _data = {
-"RESET": SubResource("Animation_pb6x6"),
-"back_transition": SubResource("Animation_bgg2d"),
-"start_transition": SubResource("Animation_3a2q3")
+&"RESET": SubResource("Animation_pb6x6"),
+&"back_transition": SubResource("Animation_bgg2d"),
+&"start_transition": SubResource("Animation_3a2q3")
 }
 
 [node name="LevelSelect" type="MarginContainer"]
@@ -212,9 +212,9 @@ offset_right = 66.0
 offset_bottom = 62.0
 size_flags_horizontal = 0
 theme_override_colors/font_hover_color = Color(0.509804, 0.509804, 0.509804, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.509804, 0.509804, 0.509804, 1)
 theme_override_colors/font_color = Color(0.12549, 0.12549, 0.12549, 1)
+theme_override_colors/font_focus_color = Color(0.509804, 0.509804, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5ebmr")
 theme_override_font_sizes/font_size = 136
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0pecn")
@@ -233,7 +233,7 @@ texture = ExtResource("4_aa34o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_qxjy0")
+&"": SubResource("AnimationLibrary_qxjy0")
 }
 autoplay = "start_transition"
 

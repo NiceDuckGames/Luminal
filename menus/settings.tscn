@@ -1,14 +1,14 @@
 [gd_scene load_steps=32 format=3 uid="uid://ccm2h1qigphx4"]
 
-[ext_resource type="Script" path="res://menus/settings.gd" id="1_ythml"]
+[ext_resource type="Script" uid="uid://cciywr0icfdv1" path="res://menus/settings.gd" id="1_ythml"]
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="2_a8j2a"]
 [ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="3_k3fih"]
 [ext_resource type="FontFile" uid="uid://bf3lgo13uua43" path="res://assets/fonts/Righteous-Regular.ttf" id="4_il2ys"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="4_yomtr"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="5_cfirw"]
-[ext_resource type="Script" path="res://menus/back_button.gd" id="5_ttmvr"]
+[ext_resource type="Script" uid="uid://ccu1qbh50gykp" path="res://menus/back_button.gd" id="5_ttmvr"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="6_nx2tf"]
-[ext_resource type="Script" path="res://menus/cursor_shadow.gd" id="9_rgmmb"]
+[ext_resource type="Script" uid="uid://d055uwyyxndhb" path="res://menus/cursor_shadow.gd" id="9_rgmmb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7m5od"]
 polygon = PackedVector2Array(-0.5, 35, 91.5, 34, 91.5, 10, -0.5, 10, -0.5, 35)
@@ -275,9 +275,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_667pa"]
 _data = {
-"RESET": SubResource("Animation_wqk2i"),
-"go_back": SubResource("Animation_ksk4e"),
-"start": SubResource("Animation_kal1n")
+&"RESET": SubResource("Animation_wqk2i"),
+&"go_back": SubResource("Animation_ksk4e"),
+&"start": SubResource("Animation_kal1n")
 }
 
 [node name="Settings" type="MarginContainer"]

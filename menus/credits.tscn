@@ -1,11 +1,11 @@
 [gd_scene load_steps=25 format=3 uid="uid://b1ah0koh186x3"]
 
-[ext_resource type="Script" path="res://menus/credits.gd" id="1_3q2ey"]
+[ext_resource type="Script" uid="uid://co8hc0vvqnlrm" path="res://menus/credits.gd" id="1_3q2ey"]
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="2_3elru"]
 [ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="3_ygyjd"]
 [ext_resource type="Texture2D" uid="uid://bcnesji8o5vvj" path="res://assets/spot_light_gradient_90d.png" id="4_ya0b5"]
 [ext_resource type="FontFile" uid="uid://bf3lgo13uua43" path="res://assets/fonts/Righteous-Regular.ttf" id="5_wtrg7"]
-[ext_resource type="Script" path="res://menus/back_button.gd" id="6_3dj0m"]
+[ext_resource type="Script" uid="uid://ccu1qbh50gykp" path="res://menus/back_button.gd" id="6_3dj0m"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="7_od76o"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="8_upnqp"]
 [ext_resource type="Texture2D" uid="uid://cuunrrc7knacj" path="res://assets/jam_cards/GWJ-Full-Logo-noBG-4k.png" id="9_r7hrb"]
@@ -250,9 +250,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rmynx"]
 _data = {
-"RESET": SubResource("Animation_d5kru"),
-"go_back": SubResource("Animation_crskb"),
-"start": SubResource("Animation_rpx2d")
+&"RESET": SubResource("Animation_d5kru"),
+&"go_back": SubResource("Animation_crskb"),
+&"start": SubResource("Animation_rpx2d")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8o7r"]

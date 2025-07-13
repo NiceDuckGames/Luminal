@@ -1,8 +1,8 @@
 [gd_scene load_steps=31 format=3 uid="uid://cx4nmp1823qts"]
 
-[ext_resource type="Script" path="res://menus/main_menu.gd" id="1_fk5q6"]
+[ext_resource type="Script" uid="uid://cmcefbis0xai3" path="res://menus/main_menu.gd" id="1_fk5q6"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="2_vlnb6"]
-[ext_resource type="Script" path="res://menus/title.gd" id="3_hdfy8"]
+[ext_resource type="Script" uid="uid://bd1yrlnvhfecl" path="res://menus/title.gd" id="3_hdfy8"]
 [ext_resource type="FontFile" uid="uid://dvvkhv255pbtb" path="res://assets/fonts/Gputeks-Bold.ttf" id="4_roc3l"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="5_xjsrx"]
 [ext_resource type="FontFile" uid="uid://dprn02hhks7n1" path="res://assets/fonts/Gputeks-Regular.ttf" id="6_1o4fd"]
@@ -277,9 +277,9 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njqul"]
 _data = {
-"RESET": SubResource("Animation_kpuio"),
-"light off": SubResource("Animation_gpepc"),
-"light_on": SubResource("Animation_c14eb")
+&"RESET": SubResource("Animation_kpuio"),
+&"light off": SubResource("Animation_gpepc"),
+&"light_on": SubResource("Animation_c14eb")
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4m86l"]
@@ -357,7 +357,7 @@ color = Color(0.270588, 0.270588, 0.305882, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_njqul")
+&"": SubResource("AnimationLibrary_njqul")
 }
 autoplay = "light_on"
 
@@ -466,9 +466,9 @@ focus_neighbor_left = NodePath("../MenuContainer/HBoxContainer/Exit")
 focus_neighbor_top = NodePath("../MenuContainer/HBoxContainer/Exit")
 focus_previous = NodePath("../MenuContainer/HBoxContainer/Exit")
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.54902, 0.54902, 0.54902, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
 theme_override_fonts/font = ExtResource("4_roc3l")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4u34o")

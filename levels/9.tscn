@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://bp1f24mpxgtee"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_squhk"]
+[ext_resource type="Script" uid="uid://hmec1bmh3v0e" path="res://levels/template/level.gd" id="1_squhk"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_pgu44"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_p3y5m"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_bdinh"]
+[ext_resource type="Script" uid="uid://dsq8tpve5mcp" path="res://level_components/scripts/ui.gd" id="3_p3y5m"]
+[ext_resource type="Script" uid="uid://dvhy1t6tqe8ce" path="res://level_components/scripts/lights.gd" id="4_bdinh"]
 [ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_ov5m7"]
 [ext_resource type="Texture2D" uid="uid://bcnesji8o5vvj" path="res://assets/spot_light_gradient_90d.png" id="6_gbwdg"]
 [ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="7_gqda1"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://o351i6yb1x1u" path="res://level_components/invert_switch.tscn" id="8_gpyhp"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="9_i63wh"]
 [ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="10_6ojo8"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="11_1yew1"]
+[ext_resource type="Script" uid="uid://g10clo6ce8xh" path="res://level_components/scripts/background_color.gd" id="11_1yew1"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="12_nww84"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="13_v00fi"]
 
@@ -173,8 +173,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
 _data = {
-"RESET": SubResource("Animation_lgrmi"),
-"slide_transition": SubResource("Animation_vhlv5")
+&"RESET": SubResource("Animation_lgrmi"),
+&"slide_transition": SubResource("Animation_vhlv5")
 }
 
 [sub_resource type="Animation" id="Animation_tunm7"]
@@ -211,8 +211,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_usq5c"]
 _data = {
-"RESET": SubResource("Animation_tunm7"),
-"rotate": SubResource("Animation_ukre7")
+&"RESET": SubResource("Animation_tunm7"),
+&"rotate": SubResource("Animation_ukre7")
 }
 
 [node name="Level" type="Node2D"]

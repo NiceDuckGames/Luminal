@@ -1,15 +1,15 @@
 [gd_scene load_steps=19 format=3 uid="uid://be6ruasaqj0eg"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_w8b3n"]
+[ext_resource type="Script" uid="uid://hmec1bmh3v0e" path="res://levels/template/level.gd" id="1_w8b3n"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_j14h3"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_2ch3e"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_kyvap"]
+[ext_resource type="Script" uid="uid://dsq8tpve5mcp" path="res://level_components/scripts/ui.gd" id="3_2ch3e"]
+[ext_resource type="Script" uid="uid://dvhy1t6tqe8ce" path="res://level_components/scripts/lights.gd" id="4_kyvap"]
 [ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_23roi"]
 [ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="6_ws27g"]
 [ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_qq4ek"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="9_k2mfv"]
 [ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="10_l018e"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_lqkfk"]
+[ext_resource type="Script" uid="uid://g10clo6ce8xh" path="res://level_components/scripts/background_color.gd" id="10_lqkfk"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_t4fj2"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="12_nmpd5"]
 
@@ -171,8 +171,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
 _data = {
-"RESET": SubResource("Animation_lgrmi"),
-"slide_transition": SubResource("Animation_vhlv5")
+&"RESET": SubResource("Animation_lgrmi"),
+&"slide_transition": SubResource("Animation_vhlv5")
 }
 
 [sub_resource type="Animation" id="Animation_tavkc"]
@@ -209,8 +209,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tmexk"]
 _data = {
-"RESET": SubResource("Animation_tavkc"),
-"light_move": SubResource("Animation_d57ge")
+&"RESET": SubResource("Animation_tavkc"),
+&"light_move": SubResource("Animation_d57ge")
 }
 
 [node name="Level" type="Node2D"]

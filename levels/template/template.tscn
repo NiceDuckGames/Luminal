@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0aaun76nap64"]
+[gd_scene load_steps=14 format=3 uid="uid://c0aaun76nap64"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_w1r3d"]
+[ext_resource type="Script" uid="uid://hmec1bmh3v0e" path="res://levels/template/level.gd" id="1_w1r3d"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_4gkol"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_mqiih"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_kxrq5"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="6_tm534"]
+[ext_resource type="Script" uid="uid://dsq8tpve5mcp" path="res://level_components/scripts/ui.gd" id="3_mqiih"]
+[ext_resource type="Script" uid="uid://dvhy1t6tqe8ce" path="res://level_components/scripts/lights.gd" id="4_kxrq5"]
+[ext_resource type="Script" uid="uid://g10clo6ce8xh" path="res://level_components/scripts/background_color.gd" id="6_tm534"]
 [ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="9_fuuk1"]
+[ext_resource type="PackedScene" uid="uid://yu4k3b8phwxl" path="res://level_components/light_switch.tscn" id="9_nk3fw"]
+[ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="10_1000l"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="10_q6rld"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="11_ut4ou"]
 
@@ -78,8 +80,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
 _data = {
-"RESET": SubResource("Animation_lgrmi"),
-"slide_transition": SubResource("Animation_vhlv5")
+&"RESET": SubResource("Animation_lgrmi"),
+&"slide_transition": SubResource("Animation_vhlv5")
 }
 
 [node name="Level" type="Node2D"]
@@ -92,7 +94,7 @@ position = Vector2(326, 339)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../UI")
 libraries = {
-"": SubResource("AnimationLibrary_uuwds")
+&"": SubResource("AnimationLibrary_uuwds")
 }
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -159,5 +161,11 @@ autoplay = true
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_q6rld")
+
+[node name="LightSwitch" parent="." instance=ExtResource("9_nk3fw")]
+position = Vector2(753, 733)
+
+[node name="SwitchLight" parent="." instance=ExtResource("10_1000l")]
+position = Vector2(1124, 684)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

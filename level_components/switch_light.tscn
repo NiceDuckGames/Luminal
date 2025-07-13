@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dax2hei54riu0"]
 
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="1_5mfpq"]
-[ext_resource type="Script" path="res://level_components/scripts/switch_light.gd" id="2_52ofh"]
+[ext_resource type="Script" uid="uid://bp7ghnxq0let7" path="res://level_components/scripts/switch_light.gd" id="2_52ofh"]
 [ext_resource type="AudioStream" uid="uid://cwqn36ymm4kwq" path="res://assets/audio/clock-ticking-83775.mp3" id="3_3m37r"]
 
 [node name="SwitchLight" type="PointLight2D"]

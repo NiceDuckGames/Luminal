@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://dr0f6h6u66y2e"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_sgyac"]
+[ext_resource type="Script" uid="uid://hmec1bmh3v0e" path="res://levels/template/level.gd" id="1_sgyac"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_185cb"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_2fld0"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_sckao"]
+[ext_resource type="Script" uid="uid://dsq8tpve5mcp" path="res://level_components/scripts/ui.gd" id="3_2fld0"]
+[ext_resource type="Script" uid="uid://dvhy1t6tqe8ce" path="res://level_components/scripts/lights.gd" id="4_sckao"]
 [ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_xrdma"]
 [ext_resource type="PackedScene" uid="uid://o351i6yb1x1u" path="res://level_components/invert_switch.tscn" id="6_8ughy"]
 [ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_c887m"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b2suujhc7rvwo" path="res://level_components/no_grow_zone.tscn" id="8_gwmge"]
 [ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="9_ox4g5"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="10_dvo84"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_iwi36"]
+[ext_resource type="Script" uid="uid://g10clo6ce8xh" path="res://level_components/scripts/background_color.gd" id="10_iwi36"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="11_p8lx7"]
 
 [sub_resource type="Animation" id="Animation_lgrmi"]
@@ -172,8 +172,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
 _data = {
-"RESET": SubResource("Animation_lgrmi"),
-"slide_transition": SubResource("Animation_vhlv5")
+&"RESET": SubResource("Animation_lgrmi"),
+&"slide_transition": SubResource("Animation_vhlv5")
 }
 
 [node name="Level" type="Node2D"]

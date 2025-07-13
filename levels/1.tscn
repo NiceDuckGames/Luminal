@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cq36ufbafffkp"]
 
-[ext_resource type="Script" path="res://levels/template/level.gd" id="1_ns71l"]
+[ext_resource type="Script" uid="uid://hmec1bmh3v0e" path="res://levels/template/level.gd" id="1_ns71l"]
 [ext_resource type="PackedScene" uid="uid://d14a6shgqe0ex" path="res://player/player.tscn" id="2_fy66g"]
-[ext_resource type="Script" path="res://level_components/scripts/ui.gd" id="3_q4p0e"]
-[ext_resource type="Script" path="res://level_components/scripts/lights.gd" id="4_g002x"]
+[ext_resource type="Script" uid="uid://dsq8tpve5mcp" path="res://level_components/scripts/ui.gd" id="3_q4p0e"]
+[ext_resource type="Script" uid="uid://dvhy1t6tqe8ce" path="res://level_components/scripts/lights.gd" id="4_g002x"]
 [ext_resource type="PackedScene" uid="uid://dax2hei54riu0" path="res://level_components/switch_light.tscn" id="5_v48xu"]
 [ext_resource type="PackedScene" uid="uid://100n5i5aamyl" path="res://level_components/finish.tscn" id="5_w0bqn"]
 [ext_resource type="AudioStream" uid="uid://cvy0ahja4fa2w" path="res://assets/audio/zapsplat_sound_design_soundscape_long_tranquil_dreamy_drone_very_light_edge_of_suspense_44006.mp3" id="6_2kpj5"]
@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="7_r0sle"]
 [ext_resource type="PackedScene" uid="uid://dood6tncwaduc" path="res://level_components/level_block.tscn" id="7_vprcc"]
 [ext_resource type="Texture2D" uid="uid://css0hsjh80ps0" path="res://assets/point_light_gradient.png" id="10_3yab8"]
-[ext_resource type="Script" path="res://level_components/scripts/background_color.gd" id="10_yeqr1"]
+[ext_resource type="Script" uid="uid://g10clo6ce8xh" path="res://level_components/scripts/background_color.gd" id="10_yeqr1"]
 
 [sub_resource type="Animation" id="Animation_lgrmi"]
 length = 0.001
@@ -168,8 +168,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uuwds"]
 _data = {
-"RESET": SubResource("Animation_lgrmi"),
-"slide_transition": SubResource("Animation_vhlv5")
+&"RESET": SubResource("Animation_lgrmi"),
+&"slide_transition": SubResource("Animation_vhlv5")
 }
 
 [node name="Level" type="Node2D"]

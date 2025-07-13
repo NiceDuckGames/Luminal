@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://yu4k3b8phwxl"]
 
-[ext_resource type="Script" path="res://level_components/scripts/light_switch.gd" id="1_ltv1s"]
+[ext_resource type="Script" uid="uid://y8bfoa8621xh" path="res://level_components/scripts/light_switch.gd" id="1_ltv1s"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="2_ejynj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hovp"]

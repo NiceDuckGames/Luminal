@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2suujhc7rvwo"]
 
-[ext_resource type="Script" path="res://level_components/scripts/no_grow_zone.gd" id="1_p7x34"]
+[ext_resource type="Script" uid="uid://byrg8mvvntrhd" path="res://level_components/scripts/no_grow_zone.gd" id="1_p7x34"]
 
 [node name="NoGrowZone" type="Area2D"]
 script = ExtResource("1_p7x34")

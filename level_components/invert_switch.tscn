@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://o351i6yb1x1u"]
 
-[ext_resource type="Shader" path="res://assets/invert_pickup.gdshader" id="1_cayen"]
-[ext_resource type="Script" path="res://level_components/scripts/invert_switch.gd" id="1_r4u5w"]
+[ext_resource type="Shader" uid="uid://bbvhjqthvtf7s" path="res://assets/invert_pickup.gdshader" id="1_cayen"]
+[ext_resource type="Script" uid="uid://bk2i26waahhog" path="res://level_components/scripts/invert_switch.gd" id="1_r4u5w"]
 [ext_resource type="AudioStream" uid="uid://de4uyk68ll3ry" path="res://assets/audio/switch-8.mp3" id="3_raps3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43nmw"]
