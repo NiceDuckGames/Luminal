@@ -191,6 +191,7 @@ theme_override_constants/margin_top = 50
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
+vertical_scroll_mode = 3
 
 [node name="HFlowContainer" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2

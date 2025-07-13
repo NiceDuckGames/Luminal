@@ -12,11 +12,9 @@ func _ready() -> void:
 func show_title():
 	
 	if Globals.is_startup:
-		
 		$MenuContainer/Title.visible = true
 		
 	else:
-		
 		$MenuContainer/Title.visible = false
 
 

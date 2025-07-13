@@ -1,0 +1,26 @@
+
+To make a level:
+	
+	Create a copy of the level template scene in the res://levels/template/ directory,
+	rename it and move it to the res://levels/ directory.
+	
+	Use the components in res://level_components/ to build the level:
+	
+		- level_block.tscn is for walls and occluders
+		
+		- switch_light.tscn is a light that will affect the player's size.
+		
+		- light_switch.tscn is a switch that can be paired with a switch_light to turn it on and off.
+		
+		- invert_switch.tscn is a collectable that inverts the lighting of the level.
+		
+		- no_grow_zone.tscn is an area object that stops the player from regrowing when outside the light.
+		
+		- finish.tscn is the object that ends the level and initiates the end level animation.
+	
+	Currently you have to add the number to the level_select_item.tscn. That one scene has a node
+	for each level name to handle the light occlusion. This should obviously be organized differently.
+	
+	Other than that, the level_select.tscn scene will automatically detect the levels in the res://levels/
+	directory and display them on the screen.
+	

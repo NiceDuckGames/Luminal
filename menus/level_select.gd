@@ -21,6 +21,10 @@ func _ready() -> void:
 		
 		while file_name != "":
 			
+			if file_name == "0_how_make_level.txt":
+				file_name = da.get_next()
+				continue
+			
 			if !da.current_is_dir():
 				
 				var item = level_item_res.instantiate()
